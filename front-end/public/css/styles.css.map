@@ -1,7 +1,7 @@
 {
 "version": 3,
-"mappings": "AAAA,IAAI;EACH,gBAAgB,EAAE,KAAK",
-"sources": ["../../sass/styles.scss"],
+"mappings": "AACA,SAAS;EACR,UAAU,EAAE,KAAK;;ACFlB,aAAa;EACZ,gBAAgB,EAAE,KAAK;;AAOtB,oBAAC;EACA,OAAO,EAAE,MAAM",
+"sources": ["../../sass/styles.scss","../../sass/_navbar.scss"],
 "names": [],
 "file": "styles.css"
 }
