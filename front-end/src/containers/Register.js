@@ -16,8 +16,26 @@ class Register extends Component{
 
 	handleSubmit(event){
 		event.preventDefault();
-		const name = document.getElementById('name').value;
-		this.props.authAction(name);
+
+		var formData = {
+			 name : event.target[0].value,
+			 email : event.target[1].value,
+			 accountType : event.target[2].value,
+			 password : event.target[3].value,
+			 city : event.target[4].value,
+			 state : event.target[5].value,
+			 salesRep : event.target[6].value,
+		}
+
+		// const name = event.targer[0].value;
+		// const email= event.target[1].value;
+		// const accounttype = event.target[2].value;
+		// const password = event.target[3].value;
+		// const city = event.target[4].value;
+		// const state = event.target[5].value;
+		// const salesRep = event.target[6].value;
+		console.log(formData);
+		this.props.authAction(formData);
 	
 	}
 
@@ -26,7 +44,7 @@ class Register extends Component{
 	render(){
 		console.log(this.props.auth);
 		return(
-		 <Form horizontal onSubmit={this.handleSubmit}>
+		 <Form horizontal action="/registerprocess" onSubmit={this.handleSubmit}>
                     <FormGroup controlId="formHorizontalName" validationState={this.state.nameError}>
                         <Col componentClass={ControlLabel} sm={2}>
                             Name
@@ -40,7 +58,7 @@ class Register extends Component{
                             Email
                         </Col>
                         <Col sm={10}>
-                            <FormControl type="email" name="email" placeholder="Email" />
+                            <FormControl id="email" type="email" name="email" placeholder="Email" />
                         </Col>
                     </FormGroup>
                     <FormGroup controlId="formHorizontalName">
@@ -51,7 +69,7 @@ class Register extends Component{
                             <FormControl type="text" name="type" value="customer" disabled />
                         </Col>
                     </FormGroup>
-                    <FormGroup controlId="formHorizontalName">
+                    <FormGroup controlId="formHorizontalName" id="password">
                         <Col componentClass={ControlLabel} sm={2}>
                             Password
                         </Col>

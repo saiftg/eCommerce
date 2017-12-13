@@ -12,7 +12,7 @@ import { Provider } from 'react-redux';
 
 
 //create the store
-const theStore = applyMiddleware(reduxPromise)(createStore)(RootReducer);
+const theStore = applyMiddleware(reduxPromise)(createStore)(RootReducer, window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__());
 
 
 //Hand render the provider and hand provider theStore.
