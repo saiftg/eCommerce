@@ -3,10 +3,28 @@
 
 
 export default function(state=[], action){
-	if(action.type === 'AUTH_ACTION'){
-		return action.payload 
-	}else{	
-	return state
+	switch(action.type){
+	case 'AUTH_ACTION':
+		return action.payload.data;
+		break;
+	case "LOGOUT":
+		return [];
+		break;
+	default:
+		return state;
 }
 console.log(action);
 }
+
+
+
+// switch(action.type){
+// 	case 'AUTH_ACTION':
+// 		return action.payload.data;
+// 		break;
+// 	case "LOGOUT":
+// 		return [];
+// 		break;
+// 	default:
+// 		return state;
+// }

@@ -5,13 +5,17 @@
 
 import { combineReducers } from 'redux';
 import AuthReducer from './AuthReducer';
+import ProductLineReducer from './ProductLineReducer';
+import CartReducer from './CartReducer';
 
 
 //combineReducers takes an object as an argument with key value pairs
 // as statename : reducerfunction, which returns a value
 
 const rootReducer = combineReducers({
-	auth: AuthReducer
+	auth: AuthReducer,
+	pl: ProductLineReducer,
+	cart: CartReducer
 }) 
 
 

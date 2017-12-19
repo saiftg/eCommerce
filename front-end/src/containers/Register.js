@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import {Form, FormGroup, ControlLabel, FormControl, Button, Col, MenuItem} from 'react-bootstrap';
+import {Form, FormGroup, ControlLabel, FormControl, Button, Col} from 'react-bootstrap';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import AuthAction from '../actions/AuthAction';
@@ -8,11 +8,23 @@ class Register extends Component{
 	constructor(){
 		super();
 		this.state = {
-
+			error: ""
 		}
 		this.handleSubmit = this.handleSubmit.bind(this);
 	}
 
+
+	componentWillReceiveProps(newProps){
+		console.log(this.props);
+		console.log(newProps);
+		if(newProps.auth.msg === 'registersucces'){
+			this.props.history.push('/');
+		}else if(newProps.auth.msg === 'user exists'){
+			this.setState({
+				error: "BABABABADBSBDSBDSBDBDBDBDSBDBSDSBDBBD"
+			})
+		}
+	}
 
 	handleSubmit(event){
 		event.preventDefault();
@@ -27,13 +39,7 @@ class Register extends Component{
 			 salesRep : event.target[6].value,
 		}
 
-		// const name = event.targer[0].value;
-		// const email= event.target[1].value;
-		// const accounttype = event.target[2].value;
-		// const password = event.target[3].value;
-		// const city = event.target[4].value;
-		// const state = event.target[5].value;
-		// const salesRep = event.target[6].value;
+	
 		console.log(formData);
 		this.props.authAction(formData);
 	
@@ -45,6 +51,7 @@ class Register extends Component{
 		console.log(this.props.auth);
 		return(
 		 <Form horizontal action="/registerprocess" onSubmit={this.handleSubmit}>
+                   <h1>{this.state.error}</h1>
                     <FormGroup controlId="formHorizontalName" validationState={this.state.nameError}>
                         <Col componentClass={ControlLabel} sm={2}>
                             Name
