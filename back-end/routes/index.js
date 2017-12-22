@@ -257,7 +257,7 @@ router.post('/updateCart', (req, res, next)=>{
 				}else{
 					// the insert worked.
 					// get the sum of their products and their total
-					const getCartTotals = `SELECT (SUM(buyPrice),2) as totalPrice, count(buyPrice) as totalItems 
+					const getCartTotals = `SELECT ROUND(SUM(buyPrice),2) as totalPrice, count(buyPrice) as totalItems 
 						FROM cart
 						INNER JOIN products ON products.productCode = cart.productCode
 						WHERE cart.uid = ?;`;

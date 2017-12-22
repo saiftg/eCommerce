@@ -22,12 +22,12 @@ class App extends Component {
       <div className="app-body">
         <Route exact path="/" component={SlickSlider} />
         <div className="container">
-            <Route exact path='/' component={Home} />
-            <Route exact path='/register' component={Register} />
-            <Route exact path='/login' component={Login} />
-            <Route exact path='/logout' component={Logout} />
-            <Route exact path='/cart' component={Cart} />
-            <Route path='/shop/:productLine' component={ProductLines} />
+            <Route exact path='/ClassicModels/' component={Home} />
+            <Route exact path='/ClassicModels/register' component={Register} />
+            <Route exact path='/ClassicModels/login' component={Login} />
+            <Route exact path='/ClassicModels/logout' component={Logout} />
+            <Route exact path='/ClassicModels/cart' component={Cart} />
+            <Route path='/ClassicModels/shop/:productLine' component={ProductLines} />
           </div>
         </div>
       </div>

@@ -41,13 +41,13 @@ class NavBar extends Component{
 			}
 			var rightMenuBar = [
 				<li key={1} className="">Welcome, {this.props.auth.name}</li>,
-				<li key={2}><Link to="/cart">{cartText}</Link></li>,
-				<li key={3}><Link to="/logout">Logout</Link></li>
+				<li key={2}><Link to="/Classicmodels/cart">{cartText}</Link></li>,
+				<li key={3}><Link to="/Classicmodels/logout">Logout</Link></li>
 			]
 		}else{
 			var rightMenuBar = [
 				<li key={0}><button className="btn btn-primary" onClick={this.fakeLogin}>FAKE LOGIN</button></li>,
-			    <li key={1}><Link to="/login">Sign in</Link> or <Link to="/register">Create an account</Link></li>,
+			    <li key={1}><Link to="/Classicmodels/login">Sign in</Link> or <Link to="/Classicmodels/register">Create an account</Link></li>,
 			    <li key={2}>(0) items in cart | ($0.00)</li>
 			]
 		}
@@ -55,7 +55,7 @@ class NavBar extends Component{
 		// console.log(this.props.productLines);
 		var shopMenu = this.props.productLines.map((pl, index)=>{
 			const safeLink = encodeURIComponent(pl.productLine);
-			return(<Link key={index} to={`/shop/${safeLink}`}>{pl.productLine}</Link>)
+			return(<Link key={index} to={`/ClassicModels/shop/${safeLink}`}>{pl.productLine}</Link>)
 		})
 		// console.log(shopMenu)
 		return(
@@ -64,17 +64,17 @@ class NavBar extends Component{
 			  		<div className="container-fluid navbar-white">
 			  			<div className="container">
 				    		<ul className="nav navbar-nav">
-				    			<li><Link to="/">Home</Link></li>
+				    			<li><Link to="/Classicmodels">Home</Link></li>
 				    			<li className="dropdown">
-				    				<Link to="/shop"><i className="arrow down" />Shop</Link>
+				    				<Link to="/Classicmodels/shop"><i className="arrow down" />Shop</Link>
 				    				<ul>
 				    					<li className="dropdown-links">
 				    						{shopMenu}
 				    					</li>
 				    				</ul>
 				    			</li>
-				    			<li><Link to="/about">About Us</Link></li>
-				    			<li><Link to="/contact">Contact Us</Link></li>
+				    			<li><Link to="/Classicmodels/about">About Us</Link></li>
+				    			<li><Link to="/Classicmodels/contact">Contact Us</Link></li>
 				    		</ul>
 				    	</div>
 			    	</div>

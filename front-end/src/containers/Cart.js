@@ -62,7 +62,7 @@ class Cart extends Component{
 			// if this return occurs, the render is DONE
 			return(
 				<div>
-					<h3>Your cart is empty! Get shopping or <Link to="/login">login</Link></h3>
+					<h3>Your cart is empty! Get shopping or <Link to="/Classicmodels/login">login</Link></h3>
 				</div>
 			)
 		}else{
